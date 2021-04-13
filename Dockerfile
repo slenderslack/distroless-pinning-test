@@ -4,7 +4,7 @@ ADD . /app
 WORKDIR /app
 RUN clojure -X:uberjar
 
-FROM gcr.io/distroless/java-debian10:11
+FROM gcr.io/distroless/java-debian10:11@sha256:1606422cc472612cb5bcd885684b4bf87b3813246c266df473357dce5a0fb4b4
 COPY --from=builder /app /app
 WORKDIR /app
 CMD ["test-app.jar"]
