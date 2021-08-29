@@ -1,4 +1,4 @@
-FROM clojure:openjdk-11-tools-deps-buster AS builder
+FROM clojure:openjdk-11-tools-deps-buster@sha256:b778e828ed3c29422ac205687a328e014059d4c9c9074c907aecb716c9b6f919 AS builder
 
 ADD . /app
 WORKDIR /app
