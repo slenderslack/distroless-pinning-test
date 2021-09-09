@@ -1,0 +1,14 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: 
+  - 'build' 
+  - '-t' 
+  - 'gcr.io/$PROJECT_ID/distroless-pinning-test' 
+  - '--label' 
+  - 'org.opencontainers.image.revision=$COMMIT_SHA' 
+  - '--label' 
+  - 'org.opencontainers.image.source=Dockerfile' 
+  - '-f' 
+  - 'Dockerfile' 
+  - '.'
+images: ['gcr.io/$PROJECT_ID/distroless-pinning-test']
